@@ -626,4 +626,4 @@ class PySelenium(object):
 
 
 if __name__ == '__main__':
-    driver = PySelenium("chrome")
+    driver = PySelenium("firefox")

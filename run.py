@@ -11,7 +11,7 @@ def run():
     suite = unittest.defaultTestLoader.discover(start_dir=test_dir,pattern='test*.py')
 
     now = time.strftime('%Y-%m-%d_%H_%M_%S')
-    reportname = globalparam.report_path + '\\' + 'TestResult' + now + '.html'
+    reportname = globalparam.report_path + '/' + 'TestResult' + now + '.html'
     with open(reportname,'wb') as f:
         runner = HTMLTestRunner.HTMLTestRunner(
             stream=f,
@@ -19,10 +19,10 @@ def run():
             description='Test the import testcase'
         )
         runner.run(suite)
-    time.sleep(3)
-    # 发送邮件
-    mail = sendmail.SendMail()
-    mail.send()
+    # time.sleep(3)
+    # # 发送邮件
+    # mail = sendmail.SendMail()
+    # mail.send()
 
 if __name__=='__main__':
     run()
